@@ -4,88 +4,40 @@
 <script src="scripts/processing.js"></script>
 <script type="text/processing" data-processing-target="mycanvas">
 
-PImage chips1;
-PImage chips2;
-PImage chips3;
 
-void setup(){
+void setup()
+{
 
-size( 700, 350 );
-background(73,239,222);
-frameRate( 30 );
+	size( 700, 350 );
 
-chips1 = loadImage("images2/chips1.jpg");
-chips2 = loadImage("images2/chips2.jpg");
-chips3 = loadImage("images2/chips3.jpg");
+	frameRate( 30 );
 
 }
 
 void draw()
 {
 
-image(chips1,10,10);
-image(chips2,208,10,280,270);
-image(chips3,500,10,180,270);
+	background(200,255,55);
 
-stroke(255,229,204)
-fill(255,229,204)
-rect(85,300,40,20)
+	fill(255,100,150);
+	rect(50,50,200,100);
 
-stroke(255,229,204)
-fill(255,229,204)
-rect(325,300,40,20)
-
-stroke(255,229,204)
-fill(255,229,204)
-rect(572,300,40,20)
-
-stroke(255,229,204)
-strokeCap(SQUARE)
-strokeWeight(7)
-line(0,0,0,350)
-
-stroke(255,229,204)
-strokeCap(SQUARE)
-strokeWeight(7)
-line(0,350,700,350)
-
-stroke(255,229,204)
-strokeCap(SQUARE)
-strokeWeight(7)
-line(700,350,700,0)
-
-stroke(255,229,204)
-strokeCap(SQUARE)
-strokeWeight(7)
-line(0,0,700,0)
-
-stroke(255,229,204)
-strokeCap(SQUARE)
-strokeWeight(4)
-line(203,0,203,350)
-
-stroke(255,229,204)
-strokeCap(SQUARE)
-strokeWeight(4)
-line(494,0,494,350)
-
-stroke(255,229,204)
-strokeCap(SQUARE)
-strokeWeight(4)
-line(0,290,700,290)
-
-stroke(0,0,0)
-fill(0,0,0)
-text("$15",95,315)
-
-stroke(0,0,0)
-fill(0,0,0)
-text("$19",335,315)
-
-stroke(0,0,0)
-fill(0,0,0)
-text("$12",582,315)
-
+	text(mouseX,10,10);
+	text(mouseY,50,10);
+	
+	line(50,0,50,350);
+	line(0,50,700,50);
+	
+	
+	
+	if (mousePressed == true && mouseButton == LEFT)
+	{
+		if (mouseY > 50 && mouseY < 100 &&
+			mouseX > 50 && mouseX < 100)
+		{
+			text("Your mouse cursor is inside the box",350,50)
+		}
+	}
 }
 
 </script>
